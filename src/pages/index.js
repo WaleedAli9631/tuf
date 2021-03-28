@@ -1,28 +1,44 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Voter from "../components/vote_selection.js"
+import Htext from "../components/hometext.js"
+import styled from "styled-components";
+import Hero from "../components/landheader.js"
+
+
+const Wrapper = styled.div`
+  display: flex;
+`;
+const Wrapper2 = styled.div`
+  margin: auto;
+  align-content: center;
+  width: fit-content;
+`;
+const Content = styled.div`
+  width: 1000px;
+  padding-top: 25px;
+  margin: auto;
+`;
+
+//doesn't do anything :(
+const StyledVoter = styled(Voter)`
+  padding-top: 25px;
+  margin: auto;
+`;
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
+    <Wrapper2>
+      <Hero/>
+    </Wrapper2>
+   <Wrapper>
+     <Content>
+      <Htext/>
+      <Wrapper2>
+        <StyledVoter/>
+      </Wrapper2>
+     </Content>
+   </Wrapper> 
   </Layout>
 )
 
